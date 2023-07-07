@@ -21,9 +21,7 @@ public class SqsTest {
 
     private static SqsClient sqsClient = null;
 
-    private static final String role_arn = "arn:aws:iam::895099425585:role/data-prepper-s3source-execution-role";
-
-    private static final String sqs_queue = "https://sqs.us-east-2.amazonaws.com/895099425585/data-prepper-testing";
+    private static final String role_arn = "arn:aws:iam::<<acc-id>>:role/test-role";
 
     private static final Region region = Region.US_EAST_2;
 
@@ -40,6 +38,7 @@ public class SqsTest {
 
         List<String> messageList = new ArrayList<>();
         messageList.add(json);
+        // Can add more types for testing
 //        messageList.add(log);
 //        messageList.add(testMsg);
         while(true)
@@ -56,18 +55,8 @@ public class SqsTest {
 
     public List<String> getQueues(){
         List<String> list = new ArrayList<>();
-//        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/data-prepper-testing");
-//        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/datapreppersinktestqueue");
-//        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/nuagemodellifecycleeventsQA");
-//        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/NuageRegModelQueue");
-//        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/NuageStdQ");
-//        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/NuageStdQB");
-        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/sqs-test-1");
-        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/sqs-test-2");
-        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/sqs-test-3");
-        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/sqs-test-4");
-        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/sqs-test-5");
-        list.add("https://sqs.us-east-2.amazonaws.com/895099425585/sqs-test-6");
+        // Add the list of sqs queue urls here
+        list.add("https://sqs.us-east-2.amazonaws.com/<<ACC ID>>/my-queue");
         return list;
     }
 
